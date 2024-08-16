@@ -2,17 +2,50 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Badge from  '../components/Badge.astro';
+import LinkedinIcon from '../components/icons/Linkedin.astro';
+import SocialPill from '../components/SocialPill.astro';
+import GithubIcon from '../components/icons/github.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import WhatsappIcon from '../components/icons/Whatsapp.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import CodeIcon from '../components/icons/Code.astro';
+import '../styles/global.css';
+import Proyectos from '../components/ProyectosItem.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Portafolio de Diego Polo - Desarrollador web y de aplicativos moviles"
+        description='Contrata a Diego Polo para realizar tu pagina web  o tu aplicacion movil para Android / iOS'>
 </Layout>
 <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44 ">
-        <h1 class="text-white text-5xl font-bold flex justify-center flex-row gap-x-4 pb-4">Hey, soy Diego <div class="flex justify-center items-center"> <a href="https://www.linkedin.com/in/diego-polo-214259323/" target="_blank" rel="noopener"><Badge>Disponible para trabajar</Badge></a></div></h1>
-        <h2 class="text-xl opacity-80">Mas de 6 meses de experiencia, Desarollador Web y de Aplicativos Moviles. De Cali, Colombia. Especializado en crear soluciones unicas </h2>
-    </section>
-    
+    <SectionContainer class="py-44 pb-20">
+        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-center flex-row gap-x-4 pb-4">Hey, soy Diego <div class="flex justify-center items-center"> <a href="https://www.linkedin.com/in/diego-polo-214259323/" target="_blank" rel="noopener"><Badge>Disponible para trabajar</Badge></a></div></h1>
+        <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]"><span class="text-yellow-200/90"> Desarollador Web y de Aplicativos Moviles. </span><span class="text-red-200/90">De Cali, Colombia.</span> <span class="opacity-80">Especializado en crear soluciones unicas y efectivas.</span></h2>
+        <nav class="flex gap-4 mt-8 flex-wrap">
+            
+                <SocialPill href="https://www.linkedin.com/in/diego-polo-214259323/">
+                    <LinkedinIcon class="size-4 lg:size-6" />
+                    LinkedIn
+                </SocialPill>
+                <SocialPill href="https://github.com/mixterix99">
+                    <GithubIcon class="size-4 lg:size-6" />
+                    Github
+                </SocialPill>
+                <SocialPill href="mailto:info@diegopolodev.com">
+                    <MailIcon class="size-4 lg:size-6" />
+                    Correo Electronico
+                </SocialPill>
+                <SocialPill href="https://wa.me/573108343555?text=Hola%2C%20me%20gustaria%20conocer%20mas%20información%20sobre%20tus%20servicios">
+                    <WhatsappIcon class="size-4 lg:size-6" />
+                    WhatsApp
+                </SocialPill>
+        </nav>
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+        <h2 class="text-4xl font-semibold mb-6 flex gap-x-2">Proyectos</h2>
+        <CodeIcon>
+            <Proyectos />
+    </SectionContainer>
 </main>
 <style>
-
 </style>
