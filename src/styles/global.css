@@ -3,11 +3,6 @@ svg {
     width: 35px;
     height: 30px;
   }
-
-svg .codeIcon{
-  width: 65px;
-  height: 55px;
-}
   
   @media (max-width: 600px) {
     svg {
