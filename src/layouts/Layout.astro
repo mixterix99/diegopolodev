@@ -6,6 +6,7 @@ interface Props {
 
 const { title } = Astro.props;
 import Encabezado from '../components/Encabezado.astro';
+import Footer from '../components/Footer.astro';
 import '@fontsource-variable/onest';
 interface Props {
 	title: string
@@ -26,6 +27,7 @@ interface Props {
 	<body>
 		<Encabezado />
 		<slot />
+		<Footer />
 	</body>
 </html>
 <style is:global>
