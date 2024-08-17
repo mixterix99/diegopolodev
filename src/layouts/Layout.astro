@@ -35,6 +35,7 @@ interface Props {
 	html {
 		
 		font-family: 'Onest Variable', system-ui, sans-serif;
+		scroll-behavior: smooth;
 		
 	}
 	body{
@@ -44,4 +45,10 @@ interface Props {
 		
 		height: 100vh;
 	}
+	@media (prefers-reduced-motion:reduce){
+		html{
+			scroll-behavior: auto;
+		}
+	}
+
 </style>
