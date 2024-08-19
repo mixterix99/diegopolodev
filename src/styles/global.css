@@ -18,3 +18,10 @@ svg {
     }
   }
   
+.img_proyecto {
+  border-radius: 20px;
+  
+}
+.shadow-black {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+}

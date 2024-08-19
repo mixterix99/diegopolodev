@@ -11,6 +11,8 @@ import SectionContainer from '../components/SectionContainer.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import '../styles/global.css';
 import Proyectos from '../components/Proyectos.astro';
+import ProfileCheck from '../components/icons/Profile.astro';
+import AboutMe from '../components/About.astro';
 ---
 
 <Layout title="Portafolio de Diego Polo - Desarrollador web y de aplicativos moviles"
@@ -47,6 +49,16 @@ import Proyectos from '../components/Proyectos.astro';
         <h2 class="text-4xl font-semibold mb-6 flex gap-x-2 items-center"><CodeIcon class="size-2" />Proyectos</h2>
         <Proyectos />           
     </SectionContainer>
+
+    <SectionContainer id="about">
+        <h2
+          class="flex items-center mb-6 text-4xl font-semibold gap-x-2 "
+        >
+          <ProfileCheck class="size-10" />
+          Acerca de mi
+        </h2>
+        <AboutMe />
+      </SectionContainer>
     
 </main>
 </Layout>
