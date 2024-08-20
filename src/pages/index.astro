@@ -13,7 +13,8 @@ import '../styles/global.css';
 import Proyectos from '../components/Proyectos.astro';
 import ProfileCheck from '../components/icons/Profile.astro';
 import AboutMe from '../components/About.astro';
----
+import Contact from '../components/Contact.astro';
+--- 
 
 <Layout title="Portafolio de Diego Polo - Desarrollador web y de aplicativos moviles"
         description='Contrata a Diego Polo para realizar tu pagina web  o tu aplicacion movil para Android / iOS'>
@@ -25,7 +26,7 @@ import AboutMe from '../components/About.astro';
         <nav class="flex gap-4 mt-8 flex-wrap">
             
                 <SocialPill href="https://www.linkedin.com/in/diego-polo-214259323/">
-                    <LinkedinIcon class="size-4 lg:size-6" />
+                    <LinkedinIcon class="size-4 lg:size-6"/>
                     LinkedIn
                 </SocialPill>
                 <SocialPill href="https://github.com/mixterix99">
@@ -59,6 +60,9 @@ import AboutMe from '../components/About.astro';
         </h2>
         <AboutMe />
       </SectionContainer>
+        <SectionContainer id="contact">
+        <Contact />
     
+    </SectionContainer>
 </main>
 </Layout>
