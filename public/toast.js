@@ -12,7 +12,7 @@ function showToast(message, type = 'info', duration = 3000) {
     // Show toast
     setTimeout(() => {
         toast.classList.add('show');
-    }, 10); // Use a small timeout to ensure the class is added after appending
+    }, 10); // Usa un pequeño timeout para asegurar que la clase se añada después de agregar el elemento
 
     // Hide toast after duration
     setTimeout(() => {
@@ -20,10 +20,6 @@ function showToast(message, type = 'info', duration = 3000) {
         toast.classList.add('hide');
         setTimeout(() => {
             toast.remove();
-        }, 500); // Match the duration of the fade-out
+        }, 500); // Coincide con la duración del desvanecimiento
     }, duration);
 }
-
-// Example usage
-// showToast('Hello World!', 'success', 5000);
-// showToast('Something went wrong.', 'error', 5000);

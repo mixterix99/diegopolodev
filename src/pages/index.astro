@@ -21,7 +21,15 @@ import Contact from '../components/Contact.astro';
 
 <main>
     <SectionContainer class="py-12 pb-10">
-        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-center flex-row gap-x-4 pb-4">Hey, soy <span id="typewriter"></span><div class="flex justify-center items-center"> <a href="https://www.linkedin.com/in/diego-polo-214259323/" target="_blank" rel="noopener"><Badge>Disponible para trabajar</Badge></a></div></h1>
+        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-col lg:flex-row lg:gap-x-4 pb-4">
+            <span class="text-center lg:text-left">Hey, soy <span id="typewriter"></span></span>
+            <div class="flex justify-center lg:justify-start items-center mt-4 lg:mt-0">
+                <a href="https://www.linkedin.com/in/diego-polo-214259323/" target="_blank" rel="noopener">
+                    <Badge>Disponible para trabajar</Badge>
+                </a>
+            </div>
+        </h1>
+        
         <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]"><span class="text-yellow-200/90"> Desarollador Web y de Aplicativos Moviles. </span><span class="text-red-200/90">De Cali, Colombia.</span> <span class="opacity-80">Especializado en crear soluciones unicas y efectivas.</span></h2>
         <nav class="flex gap-4 mt-8 flex-wrap">
             

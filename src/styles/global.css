@@ -25,3 +25,11 @@ svg {
 .shadow-black {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
 }
+
+#typewriter {
+  display: inline-block;
+  font-size: inherit; /* Asegúrate de que herede el tamaño de fuente del contenedor */
+  line-height: 1.2; /* Ajusta la altura de línea para mejorar el espaciado vertical */
+  white-space: nowrap; /* Asegura que el texto no se divida en múltiples líneas */
+}
+
