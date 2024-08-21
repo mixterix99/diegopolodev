@@ -1,7 +1,7 @@
 
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">Contactame</h2>
         <p class="mb-8 lg:mb-16 font-light text-center text-gray-100 dark:text-gray-400 sm:text-xl">Completa el formulario a continuación y te responderé lo antes posible. Estoy emocionado por la posibilidad de trabajar juntos y crear algo increíble.</p>
-        <form action="/envio_formulario.php" method="POST" class="space-y-8">
+        <form id="contact-form" action="/envio_formulario.php" method="POST" class="space-y-8">
             <div>
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-100">Tu correo electronico</label>
                 <input type="email" id="email" name="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="nombre@correo.com" required>
@@ -267,60 +267,59 @@
             </div>
             <button type="submit" class="border hover:border-yellow-200 hover:text-yellow-200 py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Enviar</button>
         </form>
-        <div id="toast-container" class="hidden fixed top-4 right-4 bg-gray-800 text-white p-4 rounded-md shadow-lg"></div>
-  
+        <div id="form-message" class="form-message"></div>
                 <script type="text/javascript">
-                    document.getElementById('mi-formulario').addEventListener('submit', function(event) {
-                        event.preventDefault(); // Evita el envío del formulario por defecto
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const form = document.getElementById("contact-form");
+                        const messageDiv = document.getElementById("form-message");
 
-                        const formData = new FormData(this);
+                        form.addEventListener("submit", function(event) {
+                            event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
 
-                        fetch('https://diegopolodev-com.preview-domain.com/envio_formulario.php', {
-                            method: 'POST',
-                            body: formData
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.success) {
-                                showToast(data.message, 'success');
-                            } else {
-                                showToast('Hubo un error al enviar el formulario.', 'error');
-                            }
-                        })
-                        .catch(error => {
-                            showToast('Error de red: ' + error.message, 'error');
+                            const formData = new FormData(form);
+
+                            fetch("envio_formulario.php", {
+                                method: "POST",
+                                body: formData
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    messageDiv.textContent = data.message;
+                                    messageDiv.className = "success-message"; // Añade una clase para los estilos de éxito
+                                } else {
+                                    messageDiv.textContent = data.message;
+                                    messageDiv.className = "error-message"; // Añade una clase para los estilos de error
+                                }
+                            })
+                            .catch(error => {
+                                messageDiv.textContent = "Ocurrió un error al enviar el mensaje.";
+                                messageDiv.className = "error-message"; // Añade una clase para los estilos de error
+                            });
                         });
                     });
+
                 </script>
                 
 
 
         <style>
-           /* styles.css */
-            .toast {
-                background-color: #333;
-                color: white;
-                padding: 1rem;
-                border-radius: 0.5rem;
-                position: relative;
-                opacity: 0;
-                transition: opacity 0.5s ease;
+            .form-message {
+                margin-top: 20px;
+                padding: 10px;
+                border-radius: 4px;
+                text-align: center;
             }
 
-            .toast.show {
-                opacity: 1;
+            .success-message {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
             }
 
-            .toast.hide {
-                opacity: 0;
+            .error-message {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
             }
-
-            .toast.success {
-                background-color: #4caf50; /* Verde para éxito */
-            }
-
-            .toast.error {
-                background-color: #f44336; /* Rojo para error */
-            }
-
         </style>
