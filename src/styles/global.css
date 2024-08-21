@@ -39,14 +39,25 @@ svg {
 
 /* Estilo para mensaje de éxito */
 .success-message {
+  max-width: 500px;
+  text-align: center;
+  border-radius: 8px; 
   background-color: #d4edda; /* Color de fondo verde claro */
   color: #155724; /* Color del texto verde oscuro */
   border: 1px solid #c3e6cb; /* Borde verde claro */
+  margin-left: auto; /* Centra el contenedor horizontalmente */
+  margin-right: auto; /* Centra el contenedor horizontalmente */
 }
 
 /* Estilo para mensaje de error */
 .error-message {
+
+  max-width: 500px;
+  text-align: center;
+  border-radius: 8px; 
   background-color: #f8d7da; /* Color de fondo rojo claro */
   color: #721c24; /* Color del texto rojo oscuro */
   border: 1px solid #f5c6cb; /* Borde rojo claro */
+  margin-left: auto; /* Centra el contenedor horizontalmente */
+  margin-right: auto; /* Centra el contenedor horizontalmente */
 }
