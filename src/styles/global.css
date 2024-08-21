@@ -26,10 +26,27 @@ svg {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
 }
 
-#typewriter {
-  display: inline-block;
-  font-size: inherit; /* Asegúrate de que herede el tamaño de fuente del contenedor */
-  line-height: 1.2; /* Ajusta la altura de línea para mejorar el espaciado vertical */
-  white-space: nowrap; /* Asegura que el texto no se divida en múltiples líneas */
+/* Estilos para el mensaje de éxito o error */
+.form-message {
+  margin-top: 40px;
+  padding: 10px;
+  border-radius: 8px; /* Ajusta el radio del borde según tus preferencias */
+  text-align: center;
+  max-width: 500px; /* Opcional: Limita el ancho máximo del contenedor */
+  margin-left: auto; /* Centra el contenedor horizontalmente */
+  margin-right: auto; /* Centra el contenedor horizontalmente */
 }
 
+/* Estilo para mensaje de éxito */
+.success-message {
+  background-color: #d4edda; /* Color de fondo verde claro */
+  color: #155724; /* Color del texto verde oscuro */
+  border: 1px solid #c3e6cb; /* Borde verde claro */
+}
+
+/* Estilo para mensaje de error */
+.error-message {
+  background-color: #f8d7da; /* Color de fondo rojo claro */
+  color: #721c24; /* Color del texto rojo oscuro */
+  border: 1px solid #f5c6cb; /* Borde rojo claro */
+}

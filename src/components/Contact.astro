@@ -1,4 +1,6 @@
-
+---
+import '../styles/global.css';
+---
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-white">Contactame</h2>
         <p class="mb-8 lg:mb-16 font-light text-center text-gray-100 dark:text-gray-400 sm:text-xl">Completa el formulario a continuación y te responderé lo antes posible. Estoy emocionado por la posibilidad de trabajar juntos y crear algo increíble.</p>
         <form id="contact-form" action="/envio_formulario.php" method="POST" class="space-y-8">
@@ -265,7 +267,7 @@
                 <label for="message" class="block mb-2 text-sm font-medium text-gray-100">Tu mensaje</label>
                 <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Deja tu mensaje..."></textarea>
             </div>
-            <button type="submit" class="border hover:border-yellow-200 hover:text-yellow-200 py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Enviar</button>
+            <button type="submit" class="mb-4 border hover:border-yellow-200 hover:text-yellow-200 py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Enviar</button>
         </form>
         <div id="form-message" class="form-message rounded-full mt-4"></div>
                 <script type="text/javascript">
@@ -300,29 +302,3 @@
                     });
 
                 </script>
-                
-
-
-        <style>
-                .form-message {
-                    margin-top: 40px;
-                    padding: 10px;
-                    border-radius: 8px; /* Ajusta el radio del borde según tus preferencias */
-                    text-align: center;
-                    max-width: 500px; /* Opcional: Limita el ancho máximo del contenedor */
-                    margin-left: auto; /* Centra el contenedor horizontalmente */
-                    margin-right: auto; /* Centra el contenedor horizontalmente */
-                }
-
-                .success-message {
-                    background-color: #d4edda;
-                    color: #155724;
-                    border: 1px solid #c3e6cb;
-                }
-
-                .error-message {
-                    background-color: #f8d7da;
-                    color: #721c24;
-                    border: 1px solid #f5c6cb;
-                }
-        </style>
