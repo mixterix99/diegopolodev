@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Captura y sanitiza los datos del formulario
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Correo electrónico no válido.";
+        echo json_encode(['success' => false, 'message' => 'Correo electrónico no válido.']);
         exit;
     }
 
@@ -23,9 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Enviar el correo
     if (mail($to, $subject, $message, $headers)) {
-        echo "Mensaje enviado correctamente.";
+        echo json_encode(['success' => true, 'message' => 'Mensaje enviado correctamente.']);
     } else {
-        echo "Error al enviar el mensaje.";
+        echo json_encode(['success' => false, 'message' => 'Error al enviar el mensaje.']);
     }
+    exit;
 }
 ?>
